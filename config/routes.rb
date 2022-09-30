@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'genres/index'
+    get 'genres/edit'
+  end
+  
   scope module: :public do
     root to: 'homes#top'
     get '/about' => 'homes#about', as: 'about'
