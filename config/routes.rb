@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   namespace :admin do
     resources :genres, only: [:index, :create, :edit, :update]
     resources :items, only: [:new, :create, :index, :show, :edit, :update]
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: 'homes#top'
     get '/about' => 'homes#about', as: 'about'
+    resources :customers, only: [:show, :edit, :detain]
   end
 
   #顧客用
