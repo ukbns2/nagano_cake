@@ -1,6 +1,6 @@
 <div class = "container">
- <div class = "row">
-  <h2>商品詳細</h2>
+ <h2>商品詳細</h2>
+ <div class ="row" >
 
   <div class ="col-lg-5">
    <% if @item.image.attached? %>
@@ -27,7 +27,7 @@
       </tr>
       <tr>
        <th>税抜価格</th>
-       <th><%= @item.price %></th>
+       <th><%= @item.price %>円</th>
       </tr>
       <tr>
        <th> </th>
