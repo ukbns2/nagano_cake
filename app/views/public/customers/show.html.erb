@@ -1,2 +1,45 @@
 <h1>Public::Customers#show</h1>
 <p>Find me in app/views/public/customers/show.html.erb</p>
+
+<div>
+ <h2>マイページ</h2>
+  <h3>登録情報</h3>
+
+
+  <table class ="table table-striped-columns table-bordered">
+     <tr>
+      <th>氏名</th>
+      <th><%= @customer.last_name %><%= @customer.first_name %></th>
+     </tr>
+     <tr>
+      <th>カナ</th>
+      <th><%= @customer.last_name_kana %><%= @customer.first_name_kana %></th>
+     </tr>
+     <tr>
+      <th>郵便番号</th>
+      <th><%= @customer.postal_code %></th>
+     </tr>
+     <tr>
+      <th>住所</th>
+      <th><%= @customer.address %></th>
+     </tr>
+     <tr>
+      <th>電話番号</th>
+      <th><%= @customer.telephone_number %></th>
+     </tr>
+     <tr>
+      <th>メールアドレス</th>
+      <th><%= @customer.email %></th>
+     </tr>
+  </table>
+
+
+  <h3>配送先</h3>
+
+  <h3>注文履歴</h3>
+
+
+
+
+
+</div>
