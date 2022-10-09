@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   namespace :public do
     resources :customers, only: [:show, :edit, :detain]
   end
