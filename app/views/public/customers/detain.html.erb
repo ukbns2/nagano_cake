@@ -1,5 +1,3 @@
-<h1>Public::Customers#detain</h1>
-<p>Find me in app/views/public/customers/detain.html.erb</p>
 
 <div>
   <div>
@@ -12,7 +10,8 @@
       退会する場合は、「退会する」をクリックしてください。
     </div>
 
-
+    <%= link_to "退会しない", customers_path, class: "btn btn-primary" %>
+    <%= link_to "退会する", customers_out_path , method: :patch, class: "btn btn-danger", "date-confirm" => "退会してよろしいですか？" %>
 
 
   </div>
