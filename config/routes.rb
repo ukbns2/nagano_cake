@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
+
   #管理者用
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions"
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
     patch 'customers' => 'customers#update'
     get 'customers/detain' => "customers#detain"
     patch 'customers/out' => "customers#out"
+    resources :addresses, only: [:index, :create, :edit, :update]
   end
 
 
