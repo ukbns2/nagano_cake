@@ -24,7 +24,7 @@
             <!--顧客がログインしているとき-->
             <% if customer_signed_in? %>
              <li class ="nav-item">
-               <%= link_to 'マイページ', customers_path, class: 'nav-link text-dark' %>
+               <%= link_to 'マイページ', customers_my_page_path, class: 'nav-link text-dark' %>
              </li>
 
              <li class ="nav-item">

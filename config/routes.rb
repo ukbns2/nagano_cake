@@ -20,9 +20,9 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: 'homes#top'
     get '/about' => 'homes#about', as: 'about'
-    get '/customers' => 'customers#show'
-    get '/customers/edit' => 'customers#edit'
-    patch 'customers' => 'customers#update'
+    get '/customers/my_page' => 'customers#show'
+    get '/customers/information/edit' => 'customers#edit'
+    patch 'customers/information' => 'customers#update'
     get 'customers/detain' => "customers#detain"
     patch 'customers/out' => "customers#out"
     resources :addresses, only: [:index, :create, :edit, :update, :destroy]
