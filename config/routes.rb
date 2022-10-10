@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     patch 'customers' => 'customers#update'
     get 'customers/detain' => "customers#detain"
     patch 'customers/out' => "customers#out"
-    resources :addresses, only: [:index, :create, :edit, :update]
+    resources :addresses, only: [:index, :create, :edit, :update, :destroy]
   end
 
 
