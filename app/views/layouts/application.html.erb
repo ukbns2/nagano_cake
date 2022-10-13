@@ -42,11 +42,11 @@
             <!--管理者がログインしているとき-->
             <% elsif  admin_signed_in? %>
              <li class ="nav-item">
-               商品一覧
+               <%= link_to '商品一覧', admin_items_path, class: 'nav-link text-dark' %>
              </li>
 
              <li class ="nav-item">
-               会員一覧
+               <%= link_to '会員一覧', admin_customers_path, class: 'nav-link text-dark' %>
              </li>
 
              <li class ="nav-item">
@@ -54,7 +54,7 @@
              </li>
 
              <li class ="nav-item">
-               ジャンル一覧
+               <%= link_to 'ジャンル一覧', admin_genres_path, class: 'nav-link text-dark' %>
              </li>
 
              <li class ="nav-item">
