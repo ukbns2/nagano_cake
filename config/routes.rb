@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     patch 'customers/out' => "customers#out"
     resources :addresses, only: [:index, :create, :edit, :update, :destroy]
     resources :items, only: [:index, :show]
+    resources :cart_items, only: [:index]
   end
 
 
