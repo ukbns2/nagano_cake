@@ -16,11 +16,11 @@
      <tbody>
       <% @items.each do |item| %>
        <tr>
-        <th><%= item.id %></th>
-        <th><%= link_to item.name, admin_item_path(item) %></th>
-        <th><%= item.price %></th>
-        <th><%= item.genre.name %></th>
-        <th> </th>
+        <td><%= item.id %></td>
+        <td><%= link_to item.name, admin_item_path(item) %></td>
+        <td><%= item.price %></td>
+        <td><%= item.genre.name %></td>
+        <td> </th>
        </tr>
       <% end %>
      </tbody>
