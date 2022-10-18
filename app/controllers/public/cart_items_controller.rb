@@ -2,9 +2,10 @@ class Public::CartItemsController < ApplicationController
   before_action :authenticate_customer!
 
   def index
-    @cart_items = current_customer.cart_items.all
+    @cart_items = current_customer.cart_items
     @total = 0
   end
+
 
   def create
       if nil != current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
@@ -13,11 +14,8 @@ class Public::CartItemsController < ApplicationController
         @cart_item_already.update(amount: @cart_item_already.amount)
         redirect_to cart_items_path
       else
-        @cart_item = CartItem.new(
-          item_id: params[:cart_item][:item_id].to_i,
-          amount: params[:cart_item][:amount].to_i,
-          customer_id: current_customer
-        )
+        @cart_item = CartItem.new(cart_item_params)
+        @cart_item.customer_id = current_customer.id
         @cart_item.save
         redirect_to cart_items_path
       end

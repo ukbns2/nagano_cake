@@ -20,12 +20,12 @@
         </tr>
       </thead>
       <tbody>
-        <%= @cart_items.each do |cart_item| %>
+        <% @cart_items.each do |cart_item| %>
         <tr>
-          <td><%= image_tag cart_item.image, size: "50x50" %><%= cart_item.item.name %></td>
+          <td><%= image_tag cart_item.item.image, size: "50x50" %><%= cart_item.item.name %></td>
           <td><%= cart_item.item.with_tax_price %></td>
           <td><%= cart_item.amount %></td>
-          <td><%= cart_item.subtotal %> </td>
+          <td><%= cart_item.subtotal %></td>
           <%= @total += cart_item.subtotal %>
           <td><%= link_to "削除する", cart_item_path(cart_item.id), method: :delete, class: 'btn btn-danger', "date-confirm" => "削除してよろしいですか？" %></td>
         </tr>
