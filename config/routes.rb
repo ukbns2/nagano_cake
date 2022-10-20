@@ -28,11 +28,13 @@ Rails.application.routes.draw do
     get 'customers/detain' => "customers#detain"
     patch 'customers/out' => "customers#out"
     delete 'cart_items/destroy_all' => "cart_items#destroy_all"
+    get 'orders/check' => "orders#check"
+    post 'orders/check' => "orders#check"
+    get 'orders/thanks' => "orders#thanks"
     resources :addresses, only: [:index, :create, :edit, :update, :destroy]
     resources :items, only: [:index, :show, :new]
     resources :cart_items, only: [:index, :create, :destroy]
     resources :orders, only: [:new, :create, :index, :show,]
-    get 'orders/thanks' => "orders#thanks"
   end
 
 
