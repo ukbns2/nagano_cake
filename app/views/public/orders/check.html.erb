@@ -1,1 +1,65 @@
-<h2>注文情報確認</h2>
+<div>
+  <h2>注文情報確認</h2>
+
+  <div>
+    <table class ="table table-bordered">
+      <thead class ="thead-light">
+        <tr>
+          <th>商品名</th>
+          <th>単価(税込)</th>
+          <th>数量</th>
+          <th>小計</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cart_items.each do |cart_item| %>
+        <tr>
+          <td><%= image_tag cart_item.item.image, size: "50x50" %><%= cart_item.item.name %></td>
+          <td><%= cart_item.item.with_tax_price %></td>
+          <td><%= cart_item.amount %></td>
+          <td><%= cart_item.subtotal %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <table class ="table table-borderless">
+      <tr>
+        <th>支払い方法</th>
+        <td><%= @order.payment_method_i18n %></td>
+      </tr>
+      <tr>
+        <th>お届け先</th>
+        <td>〒<%= @order.postal_code %><%= @order.address %><br><%= @order.name %></td>
+      </tr>
+    </table>
+
+  </div>
+
+
+
+  <div>
+    <table class ="table table-bordered">
+      <tr>
+        <th class ="active">送料</th>
+        <td><%= @order.shopping_cost %></td>
+      </tr>
+      <tr>
+        <th class ="active">商品合計</th>
+        <td><%= @total %></td>
+      </tr>
+      <tr>
+        <th class ="active">請求金額</th>
+        <td>
+      </tr>
+    </table>
+  </div>
+
+  <div>
+    <div>
+      注文を確定する
+    </div>
+  </div>
+
+</div>
+
