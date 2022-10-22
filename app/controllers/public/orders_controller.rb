@@ -22,12 +22,13 @@ class Public::OrdersController < ApplicationController
       redirect_to new_order_path
     end
     @cart_items = current_customer.cart_items.all
+    @total = 0
   end
 
   def create
-    order = Order.new(order_params)
-    order.customer_id = current_customer.id
-    order.save
+    @order = Order.new(order_params)
+    @order.customer_id = current_customer.id
+    @order.save
     redirect_to orders_check_path
   end
 

@@ -18,6 +18,7 @@
           <td><%= cart_item.item.with_tax_price %></td>
           <td><%= cart_item.amount %></td>
           <td><%= cart_item.subtotal %></td>
+          <% @total += cart_item.subtotal %>
         </tr>
         <% end %>
       </tbody>
@@ -42,6 +43,7 @@
     <table class ="table table-bordered">
       <tr>
         <th class ="active">送料</th>
+        <% @order.shopping_cost = 800 %>
         <td><%= @order.shopping_cost %></td>
       </tr>
       <tr>
@@ -50,7 +52,8 @@
       </tr>
       <tr>
         <th class ="active">請求金額</th>
-        <td>
+        <% @order.total_payment = @order.shopping_cost + @total %>
+        <td><%= @order.total_payment %></td>
       </tr>
     </table>
   </div>
