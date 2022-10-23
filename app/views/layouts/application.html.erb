@@ -12,7 +12,7 @@
   </head>
 
   <body class ="d-flex flex-column vh-100">
-    <header class ="shadow-sm">
+    <header class ="border-bottom">
       <nav class ="navbar navbar-expand-lg navbar-light">
         <div class ="container">
           <a></a>
@@ -68,7 +68,7 @@
              </li>
 
              <li class ="nav-item">
-               商品一覧
+               <%= link_to '商品一覧', items_path, class: 'nav-link text-dark' %>
              </li>
 
              <li class ="nav-item">
@@ -89,6 +89,8 @@
     <main class ="mb-auto">
     <%= yield %>
     </main>
+
+    <footer class = "border-top"></footer>
   </body>
 
 </html>

@@ -1,5 +1,3 @@
-<h1>Public::Orders#show</h1>
-<p>Find me in app/views/public/orders/show.html.erb</p>
 
 <div>
   <h2>注文履歴詳細</h2>
@@ -39,14 +37,14 @@
           </tr>
         </thead>
         <tbody>
-
+          <% @order_items.each do |order_item| %>
            <tr>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
+             <td><%= order_item.item.name %></td>
+             <td><%= order_item.item.with_tax_price %></td>
+             <td><%= order_item.amount %></td>
+             <td><%= order_item.price %></td>
            </tr>
-
+          <% end %>
         </tbody>
       </table>
     </div>
