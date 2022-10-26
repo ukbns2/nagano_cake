@@ -1,7 +1,7 @@
 <div>
   <h2><%= @customer.first_name %><%= @customer.last_name %>さんの会員詳細</h2>
 
-  <table class ="table">
+  <table class ="table table-borderless">
      <tr>
        <th>会員ID</th>
        <th><%= @customer.id %></th>
@@ -39,5 +39,7 @@
        <th><%= link_to "編集する", edit_admin_customer_path(@customer), class:"btn btn-success" %>   注文一覧</th>
      </tr>
   </table>
+
+
 
 </div>
