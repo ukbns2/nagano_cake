@@ -1,33 +1,33 @@
-
-<div class ="row">
-  <div class ="col-lg-3">
-    <%= render 'genre_list', genres: @genres %>
-  </div>
-
-  <div class ="col-lg-9">
-    <h2><%= "商品一覧 (全#{@items_all.count}件)" %></h2>
-    <% @items.each do |item| %>
-    <div class = "box">
-      <table class = "table table-borderless ">
-        <tr>
-          <th>
-            <%= link_to item_path(item.id) do %>
-            <%= image_tag item.image, size: "150x150" %>
-            <% end %>
-          </th>
-        </tr>
-        <tr>
-          <th><%= item.name %></th>
-        </tr>
-        <tr>
-          <th>¥<%= item.price %></th>
-        </tr>
-      </table>
+<div class ="container">
+  <div class ="row">
+    <div class ="col-lg-3 mt-3">
+      <%= render 'genre_list', genres: @genres %>
     </div>
-    <% end %>
+
+    <div class ="col-lg-9 mt-3">
+      <h2><%= "商品一覧 (全#{@items_all.count}件)" %></h2>
+      <% @items.each do |item| %>
+      <div class = "box">
+        <table class = "table table-borderless ">
+          <tr>
+            <th>
+              <%= link_to item_path(item.id) do %>
+              <%= image_tag item.image, size: "150x150" %>
+              <% end %>
+            </th>
+          </tr>
+          <tr>
+            <th><%= item.name %></th>
+          </tr>
+          <tr>
+            <th>¥<%= item.price %></th>
+          </tr>
+        </table>
+      </div>
+      <% end %>
+    </div>
+
+    <%= paginate @items %>
+
   </div>
-
-  <%= paginate @items %>
-
-
 </div>
