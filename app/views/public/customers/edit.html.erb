@@ -1,40 +1,44 @@
 
-<div>
+<div class ="container">
   <h2>会員情報編集</h2>
 
-   <%= form_with model: @customer, url: customers_information_path(@customer.id) do |f| %>
-   <table>
-     <tr>
-      <th>氏名</th>
-      <th><%= f.text_field :first_name %><%= f.text_field :last_name %></th>
-     </tr>
+  <div class ="row">
+   <div class ="col-md-10">
+    <%= form_with model: @customer, url: customers_information_path(@customer.id) do |f| %>
+    <table>
+      <tr>
+       <td>氏名</td>
+       <td><%= f.text_field :first_name %><%= f.text_field :last_name %></td>
+      </tr>
 
-     <tr>
-      <th>フリガナ</th>
-      <th><%= f.text_field :first_name_kana %><%= f.text_field :last_name_kana %></th>
-     </tr>
+      <tr>
+       <td>フリガナ</td>
+       <td><%= f.text_field :first_name_kana %><%= f.text_field :last_name_kana %></td>
+      </tr>
 
-   　<tr>
-      <th>郵便番号</th>
-      <th><%= f.text_field :postal_code %></th>
-     </tr>
+    　<tr>
+       <td>郵便番号</td>
+       <td><%= f.text_field :postal_code %></td>
+      </tr>
 
-     <tr>
-      <th>住所</th>
-      <th><%= f.text_field :address, size: "50" %></th>
-     </tr>
+      <tr>
+       <td>住所</td>
+       <td><%= f.text_field :address, size: "50" %></td>
+      </tr>
 
-     <tr>
-      <th>電話番号</th>
-      <th><%= f.text_field :telephone_number %></th>
-     </tr>
+      <tr>
+       <td>電話番号</td>
+       <td><%= f.text_field :telephone_number %></td>
+      </tr>
 
-     <tr>
-      <th>メールアドレス</th>
-      <th><%= f.email_field :email %></th>
-     </tr>
+      <tr>
+       <td>メールアドレス</td>
+       <td><%= f.email_field :email %></td>
+      </tr>
 
-   </table>
+    </table>
+   </div>
+  </div>
 
    <div class="actions">
      <%= f.submit "編集内容を保存", class: "btn btn-success" %>
