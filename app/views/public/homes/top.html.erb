@@ -1,6 +1,43 @@
-<h1>Homes#top</h1>
+<div class ="container">
+  <div class ="row">
+    <div class ="col-lg-2 mt-3">
+      <%= render 'public/items/genre_list', genres: @genres %>
+    </div>
 
-<span>ようこそ、ながのCAKEへ！</span><br>
-<span>このサイトは、ケーキ販売のECサイトになります。</span><br>
-<span>会員でない方も商品の閲覧はできますが、</span><br>
-<span>購入には会員登録が必要になります。</span>
+    <div class ="col-lg-7 offset-lg-1 mt-3">
+      <h1>Homes#top</h1>
+
+      <span>ようこそ、ながのCAKEへ！</span><br>
+      <span>このサイトは、ケーキ販売のECサイトになります。</span><br>
+      <span>会員でない方も商品の閲覧はできますが、</span><br>
+      <span>購入には会員登録が必要になります。</span>
+    </div>
+  </div>
+
+  <div class ="row">
+    <h4 class ="offset-lg-3"><strong>新着商品</strong></h4>
+
+    <div>
+      <% @items.each do |item| %>
+      <div class ="box">
+       <%= link_to item_path(item.id) do %>
+        <%= image_tag item.image, size: "150x150" %>
+       <% end %>
+       <p><%= item.name %></p>
+       <p>¥<%= item.price %></p>
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+
+  <div class ="row">
+    <div class ="offset-lg-9">
+      <%= link_to "全ての商品を見る>", items_path %>
+    </div>
+  </div>
+
+
+
+
+</div>
