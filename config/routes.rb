@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     get 'orders/thanks' => "orders#thanks"
     resources :addresses, only: [:index, :create, :edit, :update, :destroy]
     resources :items, only: [:index, :show, :new]
-    resources :cart_items, only: [:index, :create, :destroy]
+    resources :cart_items, only: [:index, :create, :update, :destroy]
     resources :orders, only: [:new, :create, :index, :show,]
   end
 
